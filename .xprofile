@@ -1,0 +1,29 @@
+# Uncomment to load xresources file
+
+slstatus &
+#dwmstatus 2>&1 >/dev/null &
+
+# Uncomment and edit to set the wallpaper.
+# feh --bg-fill ~/Pictures/Mountains.jpg
+
+# Hides the mouse cursor after 3 seconds of inactivity
+unclutter -idle 3 &
+xrdb ~/.Xresources &
+
+# multiple monitors
+# xrandr --output HDMI-0 --mode 1920x1080 --rate 240 --output DP-0 --left-of HDMI-0 --mode 1920x1080 --rate 240 &
+
+# single monitor
+xrandr --output HDMI-0 --mode 1920x1080 --rate 240 
+
+for id in $(xinput  list | grep  "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done &
+
+~/.fehbg &
+# exec picom &
+# Saving a dwm log
+#exec dwm > ~/.dwm.log
+
+
+
+
+
