@@ -1,0 +1,24 @@
+#!/bin/bash
+# Hides the mouse cursor after 3 seconds of inactivity
+unclutter -idle 3 &
+xrdb ~/.Xresources &
+
+# multiple monitors
+xrandr --output HDMI-0 --mode 1920x1080 --rate 240 --output DP-0 --left-of HDMI-0 --mode 1920x1080 --rate 240 &
+
+# single monitor
+# xrandr --output HDMI-0 --mode 1920x1080 --rate 240 
+
+xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 1 &
+
+slstatus & 
+
+~/.fehbg 
+# exec picom &
+# Saving a dwm log
+# exec dwm > ~/.dwm.log
+
+
+
+
+
